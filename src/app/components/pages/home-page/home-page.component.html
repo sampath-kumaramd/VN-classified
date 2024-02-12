@@ -1,3 +1,13 @@
 <app-header></app-header>
-<p>home-page works!</p>
+<div class="card-container mx-16 flex flex-wrap">
+  <app-home-page-card
+    *ngFor="let item of data"
+    [title]="item.title"
+    [icon]="item.icon"
+    [stringArray]="item.stringArray"
+    [gradientColor1]="item.gradientColor1"
+    [gradientColor2]="item.gradientColor2"
+  >
+  </app-home-page-card>
+</div>
 <app-footer></app-footer>

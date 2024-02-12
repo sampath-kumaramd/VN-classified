@@ -1,0 +1,21 @@
+<div class="mt-5 mb-5">
+  <mat-card [ngStyle]="{ background: gradient }">
+    <mat-card-header>
+      <mat-card-title>
+        <div class="flex space-x-40">
+          <div>{{ title }}</div>
+          <div class=" bg-yellow-300 rounded-full w-8 h-8 p-1">
+            <mat-icon>{{ icon }}</mat-icon>
+          </div>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="mt-4">
+        <div class="mt-1" *ngFor="let item of stringArray">
+          {{ item }}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { HomePageCardComponent } from './components/pages/home-page/home-page-card/home-page-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomePageComponent
+    HomePageComponent,
+    HomePageCardComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { HomePageComponent } from './components/pages/home-page/home-page.compon
 
     // angualr material
     MatSlideToggleModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
