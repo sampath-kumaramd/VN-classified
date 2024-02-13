@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+<div class="text-center text-3xl mt-12 mb-12">
+  Post <span class="text-red-500"> Ad</span>
+</div>
+<form [formGroup]="postAdForm" class="form">
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <input
+      matInput
+      id="category"
+      formControlName="category"
+      placeholder="e.g automotive, tickets, jobs"
+    />
+    <mat-hint>Tell us what you’re posting</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Sub-category</mat-label>
+    <input
+      matInput
+      id="subCategory"
+      formControlName="subCategory"
+      placeholder="e.g classic car, SUVs, Truck"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Location</mat-label>
+    <input
+      matInput
+      id="location"
+      formControlName="location"
+      placeholder="e.g NY, UK, USA"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input
+      matInput
+      id="title"
+      formControlName="title"
+      placeholder="e.g Classic car available in ..."
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea
+      matInput
+      id="description"
+      formControlName="description"
+      placeholder="Write your description here"
+      (keyup)="updateWordCount($event)"
+    ></textarea>
+    <mat-hint align="end">{{ wordCount }}/2000</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput id="price" formControlName="price" placeholder="$$" />
+  </mat-form-field>
+
+  <div>
+    <label for="photos">Photos</label>
+    <input type="file" id="photos" formControlName="photos" />
+  </div>
+
+  <div>
+    <div class="mt-6 flex justify-between">
+      <p>Contact Details</p>
+      <p>Edit</p>
+    </div>
+    <div class="user-data">
+      <div>
+        <p>Name: {{ userData.name }}</p>
+        <p>Location:{{ userData.location }}</p>
+      </div>
+      <div>
+        <p>Email:{{ userData.email }}</p>
+        <p>Phone:{{ userData.phone }}</p>
+      </div>
+    </div>
+    <div class="text-left p-2 bg-blue-100 mt-4">
+      All emails replies are sent via Gumtree message centre. To deter and
+      identify potential fraud, spam or suspicious behavior, we anonymize your
+      email address, and reserve the right to monitor conversations.
+    </div>
+
+    <div class="text-left p-2 mt-4">
+      By selecting Post My Ad you agree you've read and accepted our Terms of
+      Use and Posting Rules. Please see our Privacy Notice for information
+      regarding the processing of your data.
+    </div>
+  </div>
+
+  <button mat-raised-button type="submit" [disabled]="!postAdForm.valid" color="primary" class="mt-16 mb-16">
+    Post Ad
+  </button>
+</form>
+
+<app-footer></app-footer>

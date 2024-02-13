@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  margin-inline: auto;
+  margin-top: 3vh;
+  padding-bottom: 11vh;
+}
+
+.user-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f0f0f0;
+  padding: 1vh;
+  align-items: center;
+  border: #565656 1px solid;
+}

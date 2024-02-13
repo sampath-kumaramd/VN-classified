@@ -20,6 +20,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { HomePageCardComponent } from './components/pages/home-page/home-page-card/home-page-card.component';
 import { LoginComponent } from './components/pages/login/login.component';
+import { PostAdComponent } from './components/pages/post-ad/post-ad.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoginComponent } from './components/pages/login/login.component';
     HomePageComponent,
     HomePageCardComponent,
     LoginComponent,
+    PostAdComponent,
   ],
   imports: [
     BrowserModule,
