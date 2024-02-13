@@ -16,6 +16,6 @@ export class HomePageCardComponent {
   @Input() gradientColor2: string = 'white';
 
   get gradient(): string {
-    return `linear-gradient(to bottom, ${this.gradientColor1} 30%, ${this.gradientColor2} 50%)`;
+    return `linear-gradient(to bottom, ${this.gradientColor1} 5%, ${this.gradientColor2} 40%)`;
   }
 }

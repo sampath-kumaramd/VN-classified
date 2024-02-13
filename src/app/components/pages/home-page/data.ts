@@ -2,8 +2,8 @@ export const data = [
   {
     title: 'Vehicle',
     icon: 'drive_eta',
-    gradientColor1: '#3C486B',
-    gradientColor2: '#CFD2DB',
+    gradientColor1: '#bcc0cc',
+    gradientColor2: '#e2e4e9',
     stringArray: [
       'Aircraft',
       'Automotive Items & Parts',
@@ -23,8 +23,8 @@ export const data = [
   {
     title: 'Services',
     icon: 'headset_mic',
-    gradientColor1: '#3C486B',
-    gradientColor2: '#CFD2DB',
+    gradientColor1: '#fade60',
+    gradientColor2: '#fdf3c5',
     stringArray: [
       'Automotive Services',
       'Beauty & Salon Services',
@@ -46,8 +46,8 @@ export const data = [
   {
     title: 'Items For Sale',
     icon: 'card_travel',
-    gradientColor1: '#3C486B',
-    gradientColor2: '#CFD2DB',
+    gradientColor1: '#f2f2f2',
+    gradientColor2: '#fbfbfb',
     stringArray: [
       'Appliances',
       'Art & Crafts',
@@ -76,8 +76,8 @@ export const data = [
   {
     title: 'Jobs',
     icon: 'work',
-    gradientColor1: '#3C486B',
-    gradientColor2: '#CFD2DB',
+    gradientColor1: '#f78787',
+    gradientColor2: '#fde5e5',
     stringArray: [
       'Accounting & Bookkeeping Jobs',
       'Business Opportunities',
@@ -100,8 +100,8 @@ export const data = [
   {
     title: 'Pets',
     icon: 'pets',
-    gradientColor1: '#3C486B',
-    gradientColor2: '#CFD2DB',
+    gradientColor1: '#f2f2f2',
+    gradientColor2: '#fbfbfb',
     stringArray: [
       'Birds',
       'Cats',
@@ -119,8 +119,8 @@ export const data = [
   {
     title: 'Real Estate',
     icon: 'business',
-    gradientColor1: '#3C486B',
-    gradientColor2: '#CFD2DB',
+    gradientColor1: '#bcc0cc',
+    gradientColor2: '#e2e4e9',
     stringArray: [
       'Commercial Real Estate',
       'Condos For Sale',
@@ -138,8 +138,8 @@ export const data = [
   {
     title: 'For Rent',
     icon: 'home',
-    gradientColor1: '#3C486B',
-    gradientColor2: '#CFD2DB',
+    gradientColor1: '#f78787',
+    gradientColor2: '#fde5e5',
     stringArray: [
       'Apartments For Rent',
       'Commercial Lease',
@@ -153,8 +153,8 @@ export const data = [
   {
     title: 'Community',
     icon: 'people',
-    gradientColor1: '#3C486B',
-    gradientColor2: '#CFD2DB',
+    gradientColor1: '#fade60',
+    gradientColor2: '#fdf3c5',
     stringArray: [
       'Announcements',
       'Car Pool',
