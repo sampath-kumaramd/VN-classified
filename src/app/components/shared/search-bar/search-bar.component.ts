@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,12 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent {
-  category: string = 'all';
-  search: string = '';
-  country: string = 'all';
-  city: string  = 'all';
+  searchForm = new FormGroup({
+    category: new FormControl(''),
+    search: new FormControl(''),
+    country: new FormControl(''),
+    city: new FormControl('')
+  });
 
-  onSubmit(data : any) {
-    console.log(data);
+  onSubmit(): void {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.searchForm.value);
+    // send the form data to the backend
   }
 }
