@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-ad',
@@ -17,7 +18,7 @@ export class PostAdComponent implements OnInit {
     phone: '+44 xxx XxXxx02',
   };
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.postAdForm = this.formBuilder.group({
@@ -33,5 +34,11 @@ export class PostAdComponent implements OnInit {
 
   updateWordCount(event: any): void {
     this.wordCount = event.target.value.split(' ').length;
+  }
+  onSubmit(): void {
+    if (this.postAdForm.valid) {
+      console.log(this.postAdForm.value);
+      this.router.navigate(['/post-ad-success']);
+    }
   }
 }

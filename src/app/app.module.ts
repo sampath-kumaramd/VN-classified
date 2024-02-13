@@ -21,6 +21,7 @@ import { HomePageComponent } from './components/pages/home-page/home-page.compon
 import { HomePageCardComponent } from './components/pages/home-page/home-page-card/home-page-card.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { PostAdComponent } from './components/pages/post-ad/post-ad.component';
+import { PostAdSuccessComponent } from './components/pages/post-ad-success/post-ad-success.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PostAdComponent } from './components/pages/post-ad/post-ad.component';
     HomePageCardComponent,
     LoginComponent,
     PostAdComponent,
+    PostAdSuccessComponent,
   ],
   imports: [
     BrowserModule,
