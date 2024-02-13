@@ -18,17 +18,22 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 
-import { HeaderComponent } from './components/shared/header/header.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
+import { HeaderComponent } from './components/shared/components/header/header.component';
+import { FooterComponent } from './components/shared/components/footer/footer.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { HomePageCardComponent } from './components/pages/home-page/home-page-card/home-page-card.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { PostAdComponent } from './components/pages/post-ad/post-ad.component';
 import { PostAdSuccessComponent } from './components/pages/post-ad-success/post-ad-success.component';
-import { SearchBarComponent } from './components/shared/search-bar/search-bar.component';
+import { SearchBarComponent } from './components/shared/components/search-bar/search-bar.component';
+import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
+import { ContentCardComponent } from './components/pages/category-page/content-card/content-card.component';
+import { AdPageComponent } from './components/pages/ad-page/ad-page.component';
+import { KebabCasePipe } from './components/shared/pipe/kebab-case.pipe';
 
 @NgModule({
   declarations: [
+    KebabCasePipe,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -38,6 +43,9 @@ import { SearchBarComponent } from './components/shared/search-bar/search-bar.co
     PostAdComponent,
     PostAdSuccessComponent,
     SearchBarComponent,
+    CategoryPageComponent,
+    ContentCardComponent,
+    AdPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-content>
+    <div class="flex">
+      <img [src]="image" alt="Image" class="image" />
+      <div fxLayout="column" >
+        <div class=" text-xl text-sky-950">{{ title }}</div>
+        <div>
+          {{ content | slice : 0 : 130 }}{{ content.length > 130 ? "..." : "" }}
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -4,6 +4,7 @@ import { HomePageComponent } from './components/pages/home-page/home-page.compon
 import { LoginComponent } from './components/pages/login/login.component';
 import { PostAdComponent } from './components/pages/post-ad/post-ad.component';
 import { PostAdSuccessComponent } from './components/pages/post-ad-success/post-ad-success.component';
+import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'home', component: HomePageComponent},
   {path:'post-ad', component: PostAdComponent},
   {path:'post-ad-success', component: PostAdSuccessComponent},
+  {path:'category/:category', component: CategoryPageComponent},
   {path:'**', redirectTo: '/home'}
 ];
 
