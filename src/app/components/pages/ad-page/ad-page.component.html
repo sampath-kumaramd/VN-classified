@@ -1,3 +1,39 @@
 <app-header></app-header>
-<p>ad-page works!</p>
+<app-search-bar></app-search-bar>
+<div class="flex mx-16">
+  <div class="w-8/12">
+    <div class="text-3xl text-blue-950 mt-16 mb-16">
+      {{ adData.title }}
+    </div>
+
+    <div class="relative w-5/6 px-8">
+      <img [src]="selectedImage" alt="Image" class="w-full" />
+
+      <button
+        class="absolute top-1/2 left-0 transform -translate-y-1/2"
+        (click)="changeImage('previous')"
+      >
+        <i class="material-icons">chevron_left</i>
+      </button>
+
+      <button
+        class="absolute top-1/2 right-0 transform -translate-y-1/2"
+        (click)="changeImage('next')"
+      >
+        <i class="material-icons">chevron_right</i>
+      </button>
+    </div>
+
+    <div class="flex">
+      <img
+        *ngFor="let img of adData.images"
+        [src]="img"
+        (click)="changeImage(img)"
+        alt="Image"
+        class="h-48 mt-4 mr-4"
+      />
+    </div>
+  </div>
+  <div class="w-4/12 bg-green-500">Column 2</div>
+</div>
 <app-footer></app-footer>

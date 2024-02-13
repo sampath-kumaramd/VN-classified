@@ -2,7 +2,7 @@
 <app-search-bar></app-search-bar>
 
 <div class="flex mx-16">
-  <div style="flex: 7">
+  <div class="w-9/12">
     <div *ngFor="let card of cards">
       <app-content-card
         [id]="card.id"
@@ -12,7 +12,7 @@
       ></app-content-card>
     </div>
   </div>
-  <div style="flex: 3">
+  <div class="w-3/12">
     <div class="mx-8 text-center">
       <button mat-raised-button class="mx-8" style="background-color: yellow">
         Filters
