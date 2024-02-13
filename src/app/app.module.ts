@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -14,6 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -22,6 +25,7 @@ import { HomePageCardComponent } from './components/pages/home-page/home-page-ca
 import { LoginComponent } from './components/pages/login/login.component';
 import { PostAdComponent } from './components/pages/post-ad/post-ad.component';
 import { PostAdSuccessComponent } from './components/pages/post-ad-success/post-ad-success.component';
+import { SearchBarComponent } from './components/shared/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +37,14 @@ import { PostAdSuccessComponent } from './components/pages/post-ad-success/post-
     LoginComponent,
     PostAdComponent,
     PostAdSuccessComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
 
     // angualr material
     MatSlideToggleModule,
@@ -49,6 +55,7 @@ import { PostAdSuccessComponent } from './components/pages/post-ad-success/post-
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

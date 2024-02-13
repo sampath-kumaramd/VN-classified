@@ -1,0 +1,44 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <mat-card>
+      <mat-card-content>
+        <div class="flex justify-between">
+          <div class="space-x-8">
+            <mat-form-field>
+              <mat-label>Categories</mat-label>
+              <mat-select [(ngModel)]="category" name="category">
+                <mat-option value="Vehicles">Vehicles</mat-option>
+                <mat-option value="Items For Sale">Items For Sale</mat-option>
+                <mat-option value="For Rent">For Rent</mat-option>
+                <!-- Add other options here -->
+              </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field class="w-auto">
+              <input matInput placeholder="What are you looking for?" [(ngModel)]="search" name="search" />
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+          </div>
+          <div class="space-x-8">
+            <mat-form-field>
+              <mat-label>Country</mat-label>
+              <mat-select [(ngModel)]="country" name="country">
+                <mat-option value="United States">United States</mat-option>
+                <mat-option value="Canada">Canada</mat-option>
+                <!-- Add other options here -->
+              </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>City</mat-label>
+              <mat-select [(ngModel)]="city" name="city">
+                <mat-option value="New York">New York</mat-option>
+                <mat-option value="Los Angeles">Los Angeles</mat-option>
+                <!-- Add other options here -->
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
