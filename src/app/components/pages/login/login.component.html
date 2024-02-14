@@ -5,44 +5,31 @@
 >
   <div class="text-center text-3xl mt-12 mb-12 text-primary">
     Login Or Get Registered <span class="text-warn"> Now</span>
-  </div>
+  </div> 
 
   <mat-tab-group>
     <mat-tab label="Login">
-      <form [formGroup]="loginForm" class="form">
+      <form [formGroup]="loginForm" class="form" (ngSubmit)="onLoginSubmit()">
         <mat-form-field class="form-field">
           <mat-label>Email</mat-label>
           <input matInput type="email" formControlName="email" />
+          <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            Please enter a valid email.
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Password</mat-label>
-          <input
-            matInput
-            [type]="hide ? 'password' : 'text'"
-            formControlName="password"
-          />
-          <button
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide"
-          >
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+          <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            Password is required.
+          </mat-error>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
         </mat-form-field>
-
-        <a class="text-left text-primary -mt-4 mb-6" href="/forgot-password"
-          >Forgot Password?</a
-        >
-        <button
-          mat-raised-button
-          type="submit"
-          [disabled]="!loginForm.valid"
-          color="primary"
-          class="mt-4"
-        >
-          <span class="text-accent p-0 m-0">Log In</span>
+        <a class="text-left text-primary -mt-1 mb-6" href="/forgot-password">Forgot Password?</a>
+        <button mat-raised-button type="submit" [disabled]="!loginForm.valid" color="primary" class="mt-4">
+          <span class="text-accent p-0 m-0" ngClass="!signupForm.valid: text-black">Log In</span>
         </button>
         <p class="pt-2 text-center text-gray-600">
           We will never post anything without permission.
@@ -50,53 +37,46 @@
       </form>
     </mat-tab>
     <mat-tab label="Register">
-      <form [formGroup]="signupForm" class="form">
+      <form [formGroup]="signupForm" class="form" (ngSubmit)="onSignupSubmit()">
         <div class="flex space-x-4">
           <mat-form-field class="form-field flex-grow">
             <mat-label>First Name</mat-label>
             <input matInput type="text" formControlName="firstName" />
+            <mat-error *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched">
+              First name is required.
+            </mat-error>
           </mat-form-field>
           <mat-form-field class="form-field flex-grow">
             <mat-label>Last Name</mat-label>
             <input matInput type="text" formControlName="lastName" />
+            <mat-error *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched">
+              Last name is required.
+            </mat-error>
           </mat-form-field>
         </div>
         <mat-form-field class="form-field">
           <mat-label>Email</mat-label>
           <input matInput type="email" formControlName="email" />
+          <mat-error *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+            Please enter a valid email.
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Password</mat-label>
-          <input
-            matInput
-            [type]="hide ? 'password' : 'text'"
-            formControlName="password"
-          />
-          <button
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide"
-          >
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+          <mat-error *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+            Password is required.
+          </mat-error>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
         </mat-form-field>
         <p class="pt-4 text-gray-500 pb-4">
-          By selecting Register you agree you've read and accepted our Terms of
-          Use. Please see our Privacy Notice for information regarding the
-          processing of your data.
+          By selecting Register you agree you've read and accepted our Terms of Use. Please see our Privacy Notice for information regarding the processing of your data.
         </p>
-
-        <button
-          mat-raised-button
-          type="submit"
-          [disabled]="!signupForm.valid"
-          color="primary"
-        >
-        <span class="text-accent p-0 m-0">  Register </span>
+        <button mat-raised-button type="submit" [disabled]="!signupForm.valid" color="primary">
+          <span class="text-accent p-0 m-0" ngClass="!signupForm.valid: text-black">Register</span>
         </button>
-
         <p class="pt-4 text-center">
           We will never post anything without permission.
         </p>
