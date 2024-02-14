@@ -71,9 +71,9 @@
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
         </mat-form-field>
-        <p class="pt-4 text-gray-500 pb-4">
-          By selecting Register you agree you've read and accepted our Terms of Use. Please see our Privacy Notice for information regarding the processing of your data.
-        </p>
+        <div class="pt-4 text-gray-500 pb-4">
+          By selecting Register you agree you've read and accepted our <span class="font-semibold"> Terms of Use </span> . Please see our <span class="font-semibold">Privacy Notice </span> for information regarding the processing of your data.
+        </div>
         <button mat-raised-button type="submit" [disabled]="!signupForm.valid" color="primary">
           <span [ngClass]="{'text-accent': signupForm.valid, 'text-black': !signupForm.valid}" class="p-0 m-0">Register</span>
         </button>
