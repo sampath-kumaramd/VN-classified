@@ -1,64 +1,74 @@
 <mat-card>
   <mat-card-content>
     <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-      <div class="flex-container">
-        <div class="space-x-8">
-          <mat-form-field>
-            <mat-label>Categories</mat-label>
-            <mat-select formControlName="category">
-              <mat-option value="vehicles">Vehicles</mat-option>
-              <mat-option value="itemsForSale">Items For Sale</mat-option>
-              <mat-option value="forRent">For Rent</mat-option>
-              <mat-option value="community">Community</mat-option>
-              <mat-option value="jobs">Jobs</mat-option>
-              <mat-option value="pets">Pets</mat-option>
-              <mat-option value="realEstate">Real Estate</mat-option>
-              <mat-option value="services">Services</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <mat-form-field class="w-auto">
-            <input
-              matInput
-              placeholder="What are you looking for?"
-              formControlName="search"
-            />
-          </mat-form-field>
+      <div class="flex justify-between">
+        <div class="flex space-x-8">
+          <div>
+            <mat-form-field>
+              <mat-label>Categories</mat-label>
+              <mat-select formControlName="category">
+                <mat-option value="vehicles">Vehicles</mat-option>
+                <mat-option value="itemsForSale">Items For Sale</mat-option>
+                <mat-option value="forRent">For Rent</mat-option>
+                <mat-option value="community">Community</mat-option>
+                <mat-option value="jobs">Jobs</mat-option>
+                <mat-option value="pets">Pets</mat-option>
+                <mat-option value="realEstate">Real Estate</mat-option>
+                <mat-option value="services">Services</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-96">
+              <input
+                matInput
+                placeholder="What are you looking for?"
+                formControlName="search"
+              />
+            </mat-form-field>
+          </div>
         </div>
-        <div class="space-x-8">
-          <mat-form-field>
-            <mat-label>Country</mat-label>
-            <mat-select formControlName="country">
-              <mat-option value="unitedStates">United States</mat-option>
-              <mat-option value="canada">Canada</mat-option>
-              <mat-option value="mexico">Mexico</mat-option>
-              <mat-option value="unitedKingdom">United Kingdom</mat-option>
-              <mat-option value="germany">Germany</mat-option>
-              <mat-option value="france">France</mat-option>
-              <mat-option value="spain">Spain</mat-option>
-              <mat-option value="italy">Italy</mat-option>
-              <mat-option value="india">India</mat-option>
-            </mat-select>
-          </mat-form-field>
+        <div class="space-x-8 flex">
+          <div>
+            <mat-form-field>
+              <mat-label>Country</mat-label>
+              <mat-select formControlName="country">
+                <mat-option value="unitedStates">United States</mat-option>
+                <mat-option value="canada">Canada</mat-option>
+                <mat-option value="mexico">Mexico</mat-option>
+                <mat-option value="unitedKingdom">United Kingdom</mat-option>
+                <mat-option value="germany">Germany</mat-option>
+                <mat-option value="france">France</mat-option>
+                <mat-option value="spain">Spain</mat-option>
+                <mat-option value="italy">Italy</mat-option>
+                <mat-option value="india">India</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
-          <mat-form-field>
-            <mat-label>City</mat-label>
-            <mat-select formControlName="city">
-              <mat-option value="newYork">New York</mat-option>
-              <mat-option value="losAngeles">Los Angeles</mat-option>
-              <mat-option value="chicago">Chicago</mat-option>
-              <mat-option value="houston">Houston</mat-option>
-              <mat-option value="phoenix">Phoenix</mat-option>
-              <mat-option value="philadelphia">Philadelphia</mat-option>
-              <mat-option value="sanAntonio">San Antonio</mat-option>
-              <mat-option value="sanDiego">San Diego</mat-option>
-              <mat-option value="dallas">Dallas</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <div>
+            <mat-form-field>
+              <mat-label>City</mat-label>
+              <mat-select formControlName="city">
+                <mat-option value="newYork">New York</mat-option>
+                <mat-option value="losAngeles">Los Angeles</mat-option>
+                <mat-option value="chicago">Chicago</mat-option>
+                <mat-option value="houston">Houston</mat-option>
+                <mat-option value="phoenix">Phoenix</mat-option>
+                <mat-option value="philadelphia">Philadelphia</mat-option>
+                <mat-option value="sanAntonio">San Antonio</mat-option>
+                <mat-option value="sanDiego">San Diego</mat-option>
+                <mat-option value="dallas">Dallas</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="h-14 bg-third flex items-center rounded-md">
+            <button mat-button type="submit">
+              <mat-icon matSuffix >search</mat-icon>
+            </button>
+          </div>
         </div>
-        <button mat-button type="submit">
-          <mat-icon matSuffix>search</mat-icon>
-        </button>
       </div>
     </form>
   </mat-card-content>
