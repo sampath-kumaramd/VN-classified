@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
@@ -17,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { HeaderComponent } from './components/shared/components/header/header.component';
 import { FooterComponent } from './components/shared/components/footer/footer.component';
@@ -63,7 +63,8 @@ import { KebabCasePipe } from './components/shared/pipe/kebab-case.pipe';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

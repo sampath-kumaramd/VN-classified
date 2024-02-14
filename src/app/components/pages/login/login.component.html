@@ -3,8 +3,8 @@
   class="flex flex-col justify-center items-center"
   style="height: calc(100vh - 80px - 32px)"
 >
-  <div class="text-center text-3xl mt-12 mb-12">
-    Login Or Get Registered <span class="text-red-500"> Now</span>
+  <div class="text-center text-3xl mt-12 mb-12 text-primary">
+    Login Or Get Registered <span class="text-warn"> Now</span>
   </div>
 
   <mat-tab-group>
@@ -32,7 +32,7 @@
           </button>
         </mat-form-field>
 
-        <a class="text-left text-blue-500 -mt-4 mb-6" href="/forgot-password"
+        <a class="text-left text-primary -mt-4 mb-6" href="/forgot-password"
           >Forgot Password?</a
         >
         <button
@@ -40,57 +40,66 @@
           type="submit"
           [disabled]="!loginForm.valid"
           color="primary"
+          class="mt-4"
         >
-          Login
+          <span class="text-accent p-0 m-0">Log In</span>
         </button>
-        <p class="pt-4 text-center">
+        <p class="pt-2 text-center text-gray-600">
           We will never post anything without permission.
         </p>
       </form>
     </mat-tab>
-    <mat-tab label="Sign Up">
+    <mat-tab label="Register">
       <form [formGroup]="signupForm" class="form">
         <div class="flex space-x-4">
-            <mat-form-field class="form-field flex-grow">
-              <mat-label>First Name</mat-label>
-              <input matInput type="text" formControlName="firstName" />
-            </mat-form-field>
-            <mat-form-field class="form-field flex-grow">
-              <mat-label>Last Name</mat-label>
-              <input matInput type="text" formControlName="lastName" />
-            </mat-form-field>
-          </div>
+          <mat-form-field class="form-field flex-grow">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" formControlName="firstName" />
+          </mat-form-field>
+          <mat-form-field class="form-field flex-grow">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" formControlName="lastName" />
+          </mat-form-field>
+        </div>
         <mat-form-field class="form-field">
           <mat-label>Email</mat-label>
           <input matInput type="email" formControlName="email" />
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Password</mat-label>
-            <input
-              matInput
-              [type]="hide ? 'password' : 'text'"
-              formControlName="password"
-            />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-            >
-              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-            </button>
-          </mat-form-field>
-          <p class="pt-4 text-gray-500 pb-4">By selecting Register you agree you've read and accepted our Terms of Use. Please 
-            see our Privacy Notice for information regarding the processing of your data.</p>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+        <p class="pt-4 text-gray-500 pb-4">
+          By selecting Register you agree you've read and accepted our Terms of
+          Use. Please see our Privacy Notice for information regarding the
+          processing of your data.
+        </p>
 
-        <button mat-raised-button type="submit" [disabled]="!signupForm.valid" color="primary">
-          Register
+        <button
+          mat-raised-button
+          type="submit"
+          [disabled]="!signupForm.valid"
+          color="primary"
+        >
+        <span class="text-accent p-0 m-0">  Register </span>
         </button>
 
         <p class="pt-4 text-center">
-            We will never post anything without permission.
-          </p>
+          We will never post anything without permission.
+        </p>
       </form>
     </mat-tab>
   </mat-tab-group>

@@ -1,14 +1,14 @@
 <app-header></app-header>
 <app-search-bar></app-search-bar>
 
-<div class="flex mx-16">
+<div *ngIf="filteredAds.length != 0" class="flex mx-16">
   <div class="w-9/12">
-    <div *ngFor="let card of cards">
+    <div *ngFor="let ad of pagedAds">
       <app-content-card
-        [id]="card.id"
-        [image]="card.image"
-        [title]="card.title"
-        [content]="card.content"
+        [id]="ad.id"
+        [image]="ad.image"
+        [title]="ad.title"
+        [content]="ad.content"
       ></app-content-card>
     </div>
   </div>
@@ -20,5 +20,18 @@
     </div>
   </div>
 </div>
-
-<app-footer></app-footer>
+<div
+  *ngIf="filteredAds.length === 0"
+  class="flex flex-col justify-center items-center text-3xl text-warn"
+  style="height: calc(100vh - 283px)"
+>
+  No ads found
+</div>
+<mat-paginator
+  *ngIf="filteredAds.length != 0"
+  [length]="filteredAds.length"
+  [pageSize]="10"
+  [pageSizeOptions]="[10, 20, 50, 100]"
+  (page)="handlePageEvent($event)"
+></mat-paginator
+><app-footer></app-footer>
