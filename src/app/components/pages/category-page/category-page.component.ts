@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
-import { Ad } from './Ad';
+import { Ad } from '../../shared/models/Ad';
 
 @Component({
   selector: 'app-category-page',

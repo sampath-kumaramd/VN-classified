@@ -27,6 +27,10 @@ export class LoginComponent {
   onLoginSubmit() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
+      // Store user data in local storage
+      localStorage.setItem('user', JSON.stringify(this.loginForm.value));
+      // Redirect to home page
+      window.location.href = '/home';
     } else {
       console.log('Login form is not valid');
     }

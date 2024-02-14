@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { HeaderComponent } from './components/shared/components/header/header.component';
 import { FooterComponent } from './components/shared/components/footer/footer.component';
@@ -30,6 +31,7 @@ import { CategoryPageComponent } from './components/pages/category-page/category
 import { ContentCardComponent } from './components/pages/category-page/content-card/content-card.component';
 import { AdPageComponent } from './components/pages/ad-page/ad-page.component';
 import { KebabCasePipe } from './components/shared/pipe/kebab-case.pipe';
+import { EditUserComponent } from './components/pages/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { KebabCasePipe } from './components/shared/pipe/kebab-case.pipe';
     CategoryPageComponent,
     ContentCardComponent,
     AdPageComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { KebabCasePipe } from './components/shared/pipe/kebab-case.pipe';
     MatInputModule,
     MatSelectModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],

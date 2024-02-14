@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { data } from './data';
+import { data } from '../../shared/models/data';
 
 @Component({
   selector: 'app-home-page',

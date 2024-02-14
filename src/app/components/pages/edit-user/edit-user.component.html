@@ -1,0 +1,104 @@
+<app-header></app-header>
+<div
+  class="flex flex-col justify-center items-center"
+  style="height: calc(120vh - 80px - 32px)"
+>
+  <div class="text-center text-3xl mt-12 mb-12 text-primary">
+    Edit <span class="text-warn"> Information</span>
+  </div>
+
+  <form [formGroup]="editUserForm" (ngSubmit)="onFormSubmit()" class="form">
+    <div class="flex">
+      <mat-form-field class="form-field flex-grow">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+        <mat-error *ngIf="editUserForm.get('email')?.invalid && editUserForm.get('email')?.touched">
+          Please enter a valid email.
+        </mat-error>
+      </mat-form-field>
+      
+    </div>
+    <div class="flex">
+      <mat-form-field class="form-field flex-grow">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+        <mat-error *ngIf="editUserForm.get('password')?.invalid && editUserForm.get('password')?.touched">
+          Password is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="flex space-x-4">
+      <mat-form-field class="form-field flex-grow">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" />
+        <mat-error *ngIf="editUserForm.get('name')?.invalid && editUserForm.get('name')?.touched">
+          Name is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field flex-grow">
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" formControlName="phone" />
+        <mat-error *ngIf="editUserForm.get('phone')?.invalid && editUserForm.get('phone')?.touched">
+          Phone is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="flex space-x-4">
+      <mat-form-field class="form-field flex-grow">
+        <mat-label>City</mat-label>
+        <input matInput type="text" formControlName="city" />
+        <mat-error *ngIf="editUserForm.get('city')?.invalid && editUserForm.get('city')?.touched">
+          City is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field flex-grow">
+        <mat-label>Zip</mat-label>
+        <input matInput type="text" formControlName="zip" />
+        <mat-error *ngIf="editUserForm.get('zip')?.invalid && editUserForm.get('zip')?.touched">
+          Zip is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="text-primary text-2xl">Email Preferences</div>
+    <div>
+      <mat-checkbox color="primary" formControlName="noEmails"
+        >Never send me any email</mat-checkbox
+      >
+    </div>
+    <div>
+      <mat-checkbox color="primary" formControlName="notifyExpiry"
+        >Notify me when my ads are about to expire</mat-checkbox
+      >
+    </div>
+    <div>
+      <mat-checkbox color="primary" formControlName="receiveUpdates"
+        >I would like to receive general info and updates from
+        vnclassifieds.com</mat-checkbox
+      >
+    </div>
+
+    <div class="flex justify-center space-x-4 mt-8 mb-16">
+      <button mat-raised-button type="button" routerLink="/" color="warn">
+        Cancel
+      </button>
+      <button
+        mat-raised-button
+        type="submit"
+        [disabled]="!editUserForm.valid"
+        color="primary"
+      >
+        <span
+          [ngClass]="{
+            'text-accent': editUserForm.valid,
+            'text-black': !editUserForm.valid
+          }"
+          class="p-0 m-0"
+        >
+          Save changes</span
+        >
+      </button>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>
