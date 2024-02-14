@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { HeaderComponent } from './components/shared/components/header/header.component';
 import { FooterComponent } from './components/shared/components/footer/footer.component';
@@ -68,7 +69,8 @@ import { EditUserComponent } from './components/pages/edit-user/edit-user.compon
     MatSelectModule,
     MatMenuModule,
     MatPaginatorModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

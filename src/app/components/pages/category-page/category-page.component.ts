@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
 import { Ad } from '../../shared/models/Ad';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-category-page',
@@ -180,7 +181,18 @@ export class CategoryPageComponent implements OnInit {
   ];
   filteredAds: Ad[] = [];
   pagedAds: Ad[] = [];
-  constructor(private route: ActivatedRoute) {}
+  filterForm: FormGroup;
+  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder) {
+    this.filterForm = this.formBuilder.group({
+      priceLow: [''],
+      priceHigh: [''],
+      make: [''],
+      model: [''],
+      yearFrom: [''],
+      yearTo: [''],
+      isPrivateOnly: [false],
+    });
+  }
 
   ngOnInit(): void {
     this.categoryName = this.route.snapshot.paramMap.get('category');
@@ -210,5 +222,10 @@ export class CategoryPageComponent implements OnInit {
     }
   
     this.pagedAds = this.filteredAds.slice(startIndex, endIndex);
+  }
+
+  applyFilters(): void {
+    const filters = this.filterForm.value;
+    // Apply the filters to your data
   }
 }
