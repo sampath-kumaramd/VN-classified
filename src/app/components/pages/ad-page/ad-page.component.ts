@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-ad-page',
   templateUrl: './ad-page.component.html',
   styleUrls: ['./ad-page.component.scss'],
+  
 })
 export class AdPageComponent {
   adId: string | null = '1';
@@ -27,7 +32,16 @@ export class AdPageComponent {
     ],
   };
 
-  constructor(private route: ActivatedRoute) {}
+  isHandset: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(map((result) => result.matches));
+
+  constructor(
+    private route: ActivatedRoute,
+    public dialog: MatDialog,
+    private breakpointObserver: BreakpointObserver
+  ) {
+  }
 
   ngOnInit(): void {
     this.adId = this.route.snapshot.paramMap.get('adId');
@@ -68,11 +82,23 @@ export class AdPageComponent {
     console.log(this.form.value);
   }
 
-  onSubmitFilters(){
+  onSubmitFilters() {
     console.log(this.formFilter.value);
   }
 
   updateWordCount(event: any) {
     this.wordCount = event.target.value.split(' ').length;
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(FilterDialogComponent, {
+      panelClass: 'my-custom-dialog-class',
+      width: '500px',
+      height: '600px',
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

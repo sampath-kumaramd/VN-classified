@@ -1,12 +1,14 @@
 <app-header></app-header>
 <app-search-bar></app-search-bar>
+
+<button mat-button mat-raised-button (click)="openDialog()" *ngIf="(isHandset | async)" color="accent" class="mx-16 w-4/6">Open Filter</button>
 <div class="flex mx-16">
-  <div class="w-8/12 pr-8">
-    <div class="text-3xl text-blue-950 mt-8 mb-8">
+  <div class="sm:w-8/12 sm:pr-8">
+    <div class="text-xl sm:text-3xl text-blue-950 mt-8 mb-8">
       {{ adData.title }}
     </div>
 
-    <div class="relative w-5/6 px-8">
+    <div class="relative w-full sm:w-5/6 px-8">
       <img
         [src]="selectedImage"
         alt="Image"
@@ -37,7 +39,7 @@
         [src]="img"
         (click)="changeImage(img)"
         alt="Image"
-        class="h-48 mt-4 mr-4"
+        class="h-16 sm:h-48 mt-4 mr-4"
       />
     </div>
 
@@ -46,7 +48,7 @@
 
       <div>
         <p class="text-lg text-blue-950">{{ adData.subtitle }}</p>
-        <p class="text-left">{{ adData.description }}</p>
+        <p class="text-justify sm:text-left">{{ adData.description }}</p>
       </div>
     </div>
 
@@ -89,7 +91,7 @@
       </form>
     </div>
   </div>
-  <div class="w-4/12 ps-40">
+  <div class="w-4/12 ps-40" *ngIf="!(isHandset | async)">
     <form [formGroup]="formFilter" (ngSubmit)="onSubmitFilters()">
       <button
         mat-raised-button

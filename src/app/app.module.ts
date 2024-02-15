@@ -19,6 +19,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { HeaderComponent } from './components/shared/components/header/header.component';
 import { FooterComponent } from './components/shared/components/footer/footer.component';
@@ -34,6 +35,7 @@ import { AdPageComponent } from './components/pages/ad-page/ad-page.component';
 import { KebabCasePipe } from './components/shared/pipe/kebab-case.pipe';
 import { EditUserComponent } from './components/pages/edit-user/edit-user.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { FilterDialogComponent } from './components/pages/ad-page/filter-dialog/filter-dialog.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AdPageComponent,
     EditUserComponent,
     PageNotFoundComponent,
+    FilterDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatMenuModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
