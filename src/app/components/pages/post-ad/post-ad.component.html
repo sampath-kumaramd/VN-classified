@@ -102,26 +102,26 @@
 
   <div>
     <div class="mt-6 flex justify-between">
-      <p>Contact Details</p>
-      <p>Edit</p>
+      <p class="text-primary font-semibold text-xl">Contact Details</p>
+      <p class="font-semibold ">Edit</p>
     </div>
     <div class="user-data">
       <div>
         <p>Name: {{ userData.name }}</p>
-        <p>Location:{{ userData.location }}</p>
+        <p class="p-0 m-0">Location:{{ userData.location }}</p>
       </div>
       <div>
         <p>Email:{{ userData.email }}</p>
-        <p>Phone:{{ userData.phone }}</p>
+        <p class="p-0 m-0">Phone:{{ userData.phone }}</p>
       </div>
     </div>
-    <div class="text-left p-2 bg-blue-100 mt-4">
+    <div class="text-left p-2 bg-[#F2F9FF] mt-4 text-[#00437C] font-light" >
       All emails replies are sent via Gumtree message centre. To deter and
       identify potential fraud, spam or suspicious behavior, we anonymize your
       email address, and reserve the right to monitor conversations.
     </div>
 
-    <div class="text-left p-2 mt-4">
+    <div class="text-left p-2 mt-4 text-[#00437C] font-light">
       By selecting Post My Ad you agree you've read and accepted our Terms of
       Use and Posting Rules. Please see our Privacy Notice for information
       regarding the processing of your data.
@@ -133,9 +133,9 @@
     type="submit"
     [disabled]="!postAdForm.valid"
     color="primary"
-    class="mt-16 mb-16"
+    class="mt-16 mb-16 mx-32"
   >
-    Post Ad
+  <span class=" text-accent"> Post Ad</span> 
   </button>
 </form>
 

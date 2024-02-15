@@ -56,31 +56,154 @@
         <div>
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Name</mat-label>
-            <input matInput type="text" formControlName="name" required>
+            <input matInput type="text" formControlName="name" required />
           </mat-form-field>
         </div>
-      
+
         <div>
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" required>
+            <input matInput type="email" formControlName="email" required />
           </mat-form-field>
         </div>
-      
+
         <div>
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Message</mat-label>
-            <textarea matInput formControlName="message" required (input)="updateWordCount($event)" maxlength="2000"></textarea>
+            <textarea
+              matInput
+              formControlName="message"
+              required
+              (input)="updateWordCount($event)"
+              maxlength="2000"
+            ></textarea>
             <mat-hint align="end">{{ wordCount }}/2000</mat-hint>
           </mat-form-field>
         </div>
-      
+
         <div class="flex justify-center mt-8 mb-8">
-          <button mat-raised-button color="primary" type="submit" class="w-5/6">Submit</button>
+          <button mat-raised-button color="primary" type="submit" class="w-5/6">
+           <span class=" text-accent">Submit</span> 
+          </button>
         </div>
       </form>
     </div>
   </div>
-  <div class="w-4/12">Column 2</div>
+  <div class="w-4/12 ps-40">
+    <form [formGroup]="formFilter" (ngSubmit)="onSubmitFilters()">
+      <button
+        mat-raised-button
+        class="w-full mb-4"
+        style="background-color: #f9d949"
+        type="submit"
+      >
+        Price: $26495
+      </button>
+
+      <div class="mt-4"> Information </div>
+
+      <div class="flex mt-2 justify-between items-center">
+        <div class="flex items-center">
+          <div class="p-2 bg-secondary">
+            <mat-icon>person</mat-icon>
+          </div>
+          <div class="ml-4">user name</div>
+        </div>
+        <a href="" class="underline"> Contact Seller</a>
+      </div>
+
+      <div class="flex justify-between mt-8 space-x-4">
+        <mat-form-field class="w-45">
+          <mat-label>City</mat-label>
+          <input matInput formControlName="city" type="text" />
+        </mat-form-field>
+        <mat-form-field class="w-45">
+          <mat-label>Zip</mat-label>
+          <input matInput formControlName="zip" type="text" />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Contact No.</mat-label>
+          <input matInput type="text" formControlName="mobile" required />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Posted in</mat-label>
+          <input matInput type="text" formControlName="postedDate" required />
+        </mat-form-field>
+      </div>
+
+      <div class="font-primary text-lg text-center my-4">Ad #1035076848</div>
+
+      <div>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Created</mat-label>
+          <input matInput type="text" formControlName="createDate" required />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Updated</mat-label>
+          <input matInput type="text" formControlName="updatedDate" required />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Expires</mat-label>
+          <input matInput type="text" formControlName="expriedDate" required />
+        </mat-form-field>
+      </div>
+    </form>
+
+    <div class="mt-8">
+      <div class="text-center text-warn text-lg">Avoid Scams</div>
+      <div class="text-left font-light mt-4 text-primary">
+        If the price seems too good to be true, it's likely a scam. Other signs
+        of fraud: wire transfer, money orders, cashier checks, payment via gift
+        cards, shipping, escrow, "transaction protection", "guarantee". Be safe
+        by dealing locally.
+      </div>
+      <div class="flex justify-between mt-4">
+        <div class="text-primary">Learn more</div>
+        <div class="text-warn">Report this Ad</div>
+      </div>
+
+      <div class="mt-16 flex justify-between">
+        <div class="text-primary text-lg">Share & Like</div>
+        <div class="flex space-x-4">
+          <img
+            src="assets/img/like.png"
+            alt="Image"
+            class="w-full"
+            style="z-index: 1"
+          />
+          <img
+            src="assets/img/fb.png"
+            alt="Image"
+            class="w-full"
+            style="z-index: 1"
+          />
+          <img
+            src="assets/img/twitter.png"
+            alt="Image"
+            class="w-full"
+            style="z-index: 1"
+          />
+          <img
+            src="assets/img/insta.png"
+            alt="Image"
+            class="w-full"
+            style="z-index: 1"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>
