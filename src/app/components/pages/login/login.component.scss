@@ -3,9 +3,52 @@ mat-tab-group{
     margin-inline: auto;
 }
 
+@media (max-width: 992px) {
+    mat-tab-group{
+        width: 60vw;
+    }
+}
+
+@media (max-width: 768px) {
+    mat-tab-group{
+        width: 80vw;
+    }
+}
+
+@media (max-width: 576px) {
+    mat-tab-group{
+        width: 90vw;
+    }
+}
+
+.container-login{
+  height: calc(100vh - 80px - 32px)  
+}
+
+@media (max-width: 576px) {
+  .container-login{
+    height: calc(10vh - 80px - 32px)  
+  }
+}
+
+@media (max-width: 992px) {
+  .container-login{
+    height: calc(100vh - 80px - 32px)  
+  }
+}
+
+
 .form {
   display: flex;
   flex-direction: column;
   margin-top: 3vh;
   height: 54vh;
 }
+
+@media (max-width: 992px) {
+  .form {
+    height: 60vh;
+  }
+}
+
+
