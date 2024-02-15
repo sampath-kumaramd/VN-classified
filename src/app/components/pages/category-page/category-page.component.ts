@@ -3,6 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
 import { Ad } from '../../shared/models/Ad';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MatDialog } from '@angular/material/dialog';
+import { Observable, map } from 'rxjs';
+import { FilterDialogCategoryComponent } from './filter-dialog-category/filter-dialog-category.component';
 
 @Component({
   selector: 'app-category-page',
@@ -182,7 +186,18 @@ export class CategoryPageComponent implements OnInit {
   filteredAds: Ad[] = [];
   pagedAds: Ad[] = [];
   filterForm: FormGroup;
-  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder) {
+
+  isHandset: Observable<boolean> = this.breakpointObserver
+  .observe(Breakpoints.Handset)
+  .pipe(map((result) => result.matches));
+
+
+  constructor(
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    public dialog: MatDialog,
+    private breakpointObserver: BreakpointObserver
+  ) {
     this.filterForm = this.formBuilder.group({
       priceLow: [''],
       priceHigh: [''],
@@ -200,7 +215,7 @@ export class CategoryPageComponent implements OnInit {
     this.handlePageEvent({
       pageIndex: 0,
       pageSize: 10,
-      length: this.filteredAds.length
+      length: this.filteredAds.length,
     });
   }
 
@@ -216,11 +231,11 @@ export class CategoryPageComponent implements OnInit {
   handlePageEvent(event: PageEvent) {
     const startIndex = event.pageIndex * event.pageSize;
     let endIndex = startIndex + event.pageSize;
-  
+
     if (endIndex > this.filteredAds.length) {
       endIndex = this.filteredAds.length;
     }
-  
+
     this.pagedAds = this.filteredAds.slice(startIndex, endIndex);
   }
 
@@ -228,4 +243,17 @@ export class CategoryPageComponent implements OnInit {
     const filters = this.filterForm.value;
     // Apply the filters to your data
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(FilterDialogCategoryComponent, {
+      panelClass: 'my-custom-dialog-class',
+      width: '500px',
+      height: '600px',
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }

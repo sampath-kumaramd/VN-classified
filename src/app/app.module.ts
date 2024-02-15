@@ -36,6 +36,7 @@ import { KebabCasePipe } from './components/shared/pipe/kebab-case.pipe';
 import { EditUserComponent } from './components/pages/edit-user/edit-user.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FilterDialogComponent } from './components/pages/ad-page/filter-dialog/filter-dialog.component';
+import { FilterDialogCategoryComponent } from './components/pages/category-page/filter-dialog-category/filter-dialog-category.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { FilterDialogComponent } from './components/pages/ad-page/filter-dialog/
     EditUserComponent,
     PageNotFoundComponent,
     FilterDialogComponent,
+    FilterDialogCategoryComponent,
   ],
   imports: [
     BrowserModule,

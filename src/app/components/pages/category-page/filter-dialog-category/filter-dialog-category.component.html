@@ -1,0 +1,73 @@
+<div class="p-4">
+    <form [formGroup]="filterForm" (ngSubmit)="applyFilters()" class="mt-4">
+        <div class="text-center">
+          <button
+            mat-raised-button
+            class="w-full mb-4"
+            style="background-color: #f9d949"
+            type="submit"
+          >
+            Filters
+          </button>
+          <mat-divider></mat-divider>
+  
+          <div class="flex justify-between mt-8">
+            <mat-form-field class="w-45">
+              <mat-label>Price Low</mat-label>
+              <input matInput formControlName="priceLow" type="number" />
+            </mat-form-field>
+            <span class="self-center mx-4 text-lg">to</span>
+            <mat-form-field class="w-45">
+              <mat-label>Price High</mat-label>
+              <input matInput formControlName="priceHigh" type="number" />
+            </mat-form-field>
+          </div>
+  
+          <mat-form-field class="w-full">
+            <mat-label>Make</mat-label>
+            <input matInput formControlName="make" />
+          </mat-form-field>
+  
+          <mat-form-field class="w-full">
+            <mat-label>Model</mat-label>
+            <input matInput formControlName="model" />
+          </mat-form-field>
+  
+          <div class="flex justify-between">
+            <mat-form-field class="w-45">
+              <mat-label>Year From</mat-label>
+              <input matInput formControlName="yearFrom" type="number" />
+            </mat-form-field>
+            <span class="self-center mx-4 text-lg">to</span>
+            <mat-form-field class="w-45">
+              <mat-label>Year To</mat-label>
+              <input matInput formControlName="yearTo" type="number" />
+            </mat-form-field>
+          </div>
+          <div class="text-start">
+            <mat-checkbox formControlName="isPrivateOnly" color="primary"
+              >Private sellers only</mat-checkbox
+            >
+          </div>
+        </div>
+      </form>
+  
+      <div class="mt-16">
+        <div class="text-primary font-semibold text-lg">Related searches</div>
+        <div class="font-light mt-2">Used vehicles</div>
+       <div class="font-light mt-2">Vehicle donations</div>
+       <div class="font-light mt-2">What does vehicle means</div>
+       <div class="font-light mt-2">Used vehicles</div>
+       <div class="font-light mt-2">Vehicle list</div>
+      </div>
+  
+      <button
+      mat-raised-button
+      class="w-full mt-4"
+     color="primary"
+      type="submit"
+    >
+     <span class=" text-accent">Create ad</span> 
+    </button>
+
+</div>
