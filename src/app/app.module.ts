@@ -33,6 +33,7 @@ import { ContentCardComponent } from './components/pages/category-page/content-c
 import { AdPageComponent } from './components/pages/ad-page/ad-page.component';
 import { KebabCasePipe } from './components/shared/pipe/kebab-case.pipe';
 import { EditUserComponent } from './components/pages/edit-user/edit-user.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { EditUserComponent } from './components/pages/edit-user/edit-user.compon
     ContentCardComponent,
     AdPageComponent,
     EditUserComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

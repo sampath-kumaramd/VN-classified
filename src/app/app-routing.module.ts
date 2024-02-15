@@ -7,6 +7,7 @@ import { PostAdSuccessComponent } from './components/pages/post-ad-success/post-
 import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
 import { AdPageComponent } from './components/pages/ad-page/ad-page.component';
 import { EditUserComponent } from './components/pages/edit-user/edit-user.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path:'category/:category', component: CategoryPageComponent},
   {path: 'edit-user/:id', component: EditUserComponent},
   {path: 'ad/:id', component: AdPageComponent},
-  // {path:'**', redirectTo: '/home'}
+  {path:'**',  component: PageNotFoundComponent }
 ];
 
 @NgModule({
