@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-search-bar></app-search-bar>
-<div class="card-container mx-16 flex flex-wrap mb-28">
+<div class="mx-16 sm:mx-8 md:mx-16 flex flex-col sm:flex-row sm:space-x-4 md:flex-row md:space-x-4 flex-wrap mb-28">
   <app-home-page-card
     *ngFor="let item of data"
     [title]="item.title"

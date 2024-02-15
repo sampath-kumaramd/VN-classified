@@ -1,10 +1,11 @@
-<mat-card>
-  <mat-card-content>
-    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-      <div class="flex justify-between">
-        <div class="flex space-x-8">
+
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-8 space-y-8 lg:space-y-0">
           <div>
-            <mat-form-field>
+            <mat-form-field class="sm:w-48 w-full">
               <mat-label>Categories</mat-label>
               <mat-select formControlName="category">
                 <mat-option value="vehicles">Vehicles</mat-option>
@@ -19,7 +20,7 @@
             </mat-form-field>
           </div>
           <div>
-            <mat-form-field class="w-96">
+            <mat-form-field class="md:w-48 lg:w-96 sm:w-48 w-full">
               <input
                 matInput
                 placeholder="What are you looking for?"
@@ -28,9 +29,9 @@
             </mat-form-field>
           </div>
         </div>
-        <div class="space-x-8 flex">
+        <div class="flex flex-col lg:flex-row space-x-0 lg:space-x-8 space-y-8 lg:space-y-0">
           <div>
-            <mat-form-field>
+            <mat-form-field class="sm:w-48 w-full">
               <mat-label>Country</mat-label>
               <mat-select formControlName="country">
                 <mat-option value="unitedStates">United States</mat-option>
@@ -47,7 +48,7 @@
           </div>
 
           <div>
-            <mat-form-field>
+            <mat-form-field class="sm:w-48 w-full">
               <mat-label>City</mat-label>
               <mat-select formControlName="city">
                 <mat-option value="newYork">New York</mat-option>

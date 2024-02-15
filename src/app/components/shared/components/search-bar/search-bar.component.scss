@@ -1,5 +1,5 @@
-mat-card{
-    width: 92vw;
+mat-card {
+    // width: 92vw;
     justify-content: center;
     margin-inline: auto;
     margin-top: 4vh;
@@ -7,3 +7,10 @@ mat-card{
     display: flex;
     flex-direction: column;
 }
+
+/* Mobile styles (default) */
+mat-card {
+    width: 90%;
+  }
+  
+ 
