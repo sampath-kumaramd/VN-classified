@@ -1,14 +1,13 @@
 <app-header></app-header>
 <app-search-bar></app-search-bar>
 
-<button mat-button mat-raised-button (click)="openDialog()" *ngIf="(isHandset | async)" color="accent" class="mx-16 w-4/6">Open Filter</button>
-<div class="flex mx-16 lg:mx-56">
+<div class="flex mx-4 sm:mx-16 lg:mx-56">
   <div class="sm:w-8/12 sm:pr-8">
     <div class="text-xl sm:text-3xl text-blue-950 mt-8 mb-8">
       {{ adData.title }}
     </div>
 
-    <div class="relative w-full sm:w-5/6 px-8 lg:px-4">
+    <div class="relative w-full sm:w-5/6 px-2 sm:px-8 lg:px-4">
       <img
         [src]="selectedImage"
         alt="Image"
@@ -51,8 +50,135 @@
         <p class="text-justify sm:text-left">{{ adData.description }}</p>
       </div>
     </div>
+    <div *ngIf="isHandset | async">
+      <form [formGroup]="formFilter" (ngSubmit)="onSubmitFilters()">
+        <div class="text-center mt-2">
+          <button
+            mat-raised-button
+            class="w-56 mb-4 text-center"
+            style="background-color: #f9d949"
+            type="submit"
+          >
+            Price: $26495
+          </button>
+        </div>
 
-    <div>
+        <div class="mt-4">Information</div>
+
+        <div class="flex mt-2 justify-between items-center">
+          <div class="flex items-center">
+            <div class="p-2 bg-secondary">
+              <mat-icon>person</mat-icon>
+            </div>
+            <div class="ml-4">user name</div>
+          </div>
+          <a href="" class="underline"> Contact Seller</a>
+        </div>
+
+        <div class="flex justify-between mt-8 space-x-4">
+          <mat-form-field class="w-36">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" type="text" />
+          </mat-form-field>
+          <mat-form-field class="w-36">
+            <mat-label>Zip</mat-label>
+            <input matInput formControlName="zip" type="text" />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Contact No.</mat-label>
+            <input matInput type="text" formControlName="mobile" required />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Posted in</mat-label>
+            <input matInput type="text" formControlName="postedDate" required />
+          </mat-form-field>
+        </div>
+
+        <div class="font-primary text-lg text-center my-4">Ad #1035076848</div>
+
+        <div>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Created</mat-label>
+            <input matInput type="text" formControlName="createDate" required />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Updated</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="updatedDate"
+              required
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Expires</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="expriedDate"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </form>
+
+      <div class="mt-8">
+        <div class="text-center text-warn text-lg">Avoid Scams</div>
+        <div class="text-left font-light mt-4 text-primary">
+          If the price seems too good to be true, it's likely a scam. Other
+          signs of fraud: wire transfer, money orders, cashier checks, payment
+          via gift cards, shipping, escrow, "transaction protection",
+          "guarantee". Be safe by dealing locally.
+        </div>
+        <div class="flex justify-between mt-4">
+          <div class="text-primary">Learn more</div>
+          <div class="text-warn">Report this Ad</div>
+        </div>
+
+        <div class="mt-16 flex justify-between">
+          <div class="text-primary text-lg">Share & Like</div>
+          <div class="flex space-x-4">
+            <img
+              src="assets/img/like.png"
+              alt="Image"
+              class="w-full"
+              style="z-index: 1"
+            />
+            <img
+              src="assets/img/fb.png"
+              alt="Image"
+              class="w-full"
+              style="z-index: 1"
+            />
+            <img
+              src="assets/img/twitter.png"
+              alt="Image"
+              class="w-full"
+              style="z-index: 1"
+            />
+            <img
+              src="assets/img/insta.png"
+              alt="Image"
+              class="w-full"
+              style="z-index: 1"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
       <p class="text-xl text-blue-950">Contact Seller</p>
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div>
@@ -85,13 +211,13 @@
 
         <div class="flex justify-center mt-8 mb-8">
           <button mat-raised-button color="primary" type="submit" class="w-5/6">
-           <span class=" text-accent">Submit</span> 
+            <span class="text-accent">Submit</span>
           </button>
         </div>
       </form>
     </div>
   </div>
-  <div class="w-4/12  " *ngIf="!(isHandset | async)">
+  <div class="w-4/12" *ngIf="!(isHandset | async)">
     <form [formGroup]="formFilter" (ngSubmit)="onSubmitFilters()">
       <button
         mat-raised-button
@@ -102,7 +228,7 @@
         Price: $26495
       </button>
 
-      <div class="mt-4"> Information </div>
+      <div class="mt-4">Information</div>
 
       <div class="flex mt-2 justify-between items-center">
         <div class="flex items-center">

@@ -1,9 +1,13 @@
-<section class="bg-black  h-20  px-4 sm:px-16 lg:px-56">
-  <div class="sm:flex justify-between ps-10 sm:ps-0 items-center">
-    <a href="/home">
-      <img src="assets/img/logo.png" alt="logo" />
-    </a>
-    <div class="flex ps-8 sm:ps-0 space-x-8 items-center mt-2 sm:mt-0">
+<section class="sm:bg-black bg-white">
+  <div class="sm:flex justify-between items-center">
+    <div class="bg-black flex justify-center sm:justify-normal  sm:h-20 h-22 px-4 sm:px-16 lg:px-56">
+      <a href="/home">
+        <img src="assets/img/logo.png" alt="logo" />
+      </a>
+    </div>
+    <div
+      class="flex justify-center sm:justify-normal sm:ps-0 space-x-8 items-center mt-2 sm:mt-0 sm:bg-black sm:h-20 h-8  px-4 sm:px-16 lg:px-56"
+    >
       <ng-container *ngIf="getUserData(); else showLogin">
         <!-- Replace 'path_to_avatar.png' with the path to your avatar image -->
         <button (click)="navigateToEditUser()">
@@ -22,7 +26,7 @@
       <button
         mat-raised-button
         color="accent"
-        class="post-ad-button text-primary text-xs w-32 sm:text-sm sm:w-36  md:w-40"
+        class="post-ad-button text-primary text-xs w-32 sm:text-sm sm:w-36 md:w-40"
         routerLink="/post-ad"
       >
         Post Ad (Free)
@@ -30,5 +34,3 @@
     </div>
   </div>
 </section>
-
-

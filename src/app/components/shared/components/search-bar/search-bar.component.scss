@@ -82,4 +82,8 @@ mat-card {
   }
 }
 
-
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: 0 !important;
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
