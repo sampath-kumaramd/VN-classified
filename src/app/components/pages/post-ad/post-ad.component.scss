@@ -13,6 +13,11 @@
   }
 }
 
+  @media (min-width: 1024px) { // Adjust this to match the breakpoint for large screens in your project
+    .form {
+      width: 50vw;
+    }
+  }
 
 
 .user-data {

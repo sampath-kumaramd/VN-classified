@@ -1,4 +1,4 @@
-
+<div class="lg:px-56">
   <mat-card>
     <mat-card-content>
       <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
@@ -20,7 +20,7 @@
             </mat-form-field>
           </div>
           <div>
-            <mat-form-field class="md:w-48 lg:w-96 sm:w-48 w-full">
+            <mat-form-field class="md:w-48 search-box sm:w-48  lg:w-[44vw]">
               <input
                 matInput
                 placeholder="What are you looking for?"
@@ -74,3 +74,4 @@
     </form>
   </mat-card-content>
 </mat-card>
+</div>

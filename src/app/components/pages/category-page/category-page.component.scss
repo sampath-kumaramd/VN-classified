@@ -1,0 +1,21 @@
+.mat-mdc-paginator-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    min-height: var(--mat-paginator-container-size);
+}
+
+@media (max-width: 576px) {
+    .mat-mdc-paginator-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 8px;
+        width: 100%;
+        flex-wrap: nowrap !important;
+        min-height: var(--mat-paginator-container-size);
+    }
+  }

@@ -3,7 +3,7 @@
 
 <button mat-button mat-raised-button (click)="openDialog()" *ngIf="(isHandset | async)" color="accent" class="mx-16 w-4/6 mb-4">Open Filter</button>
 
-<div *ngIf="filteredAds.length != 0" class="flex mx-4 sm:mx-16">
+<div *ngIf="filteredAds.length != 0" class="flex  sm:mx-16 lg:mx-56">
   <div class="sm:w-8/12 w-full">
 
     <div class=" text-2xl text-primary">
@@ -19,7 +19,7 @@
       ></app-content-card>
     </div>
   </div>
-  <div class="w-4/12 ps-40" *ngIf="!(isHandset | async)">
+  <div class="w-4/12 ps-8 lg:ps-24" *ngIf="!(isHandset | async)">
     <form [formGroup]="filterForm" (ngSubmit)="applyFilters()" class="mt-4">
       <div class="text-center">
         <button

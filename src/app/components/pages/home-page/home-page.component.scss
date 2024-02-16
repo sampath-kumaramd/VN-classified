@@ -5,7 +5,7 @@
   }
   
   app-home-page-card {
-    flex: 0 0 calc(25% - 2em);
+    flex: 0 0 calc(25.18% - 2em);
   }
 
   @media (max-width: 992px) {
@@ -23,5 +23,13 @@
   @media (max-width: 576px) {
     app-home-page-card {
       flex: 0 0 calc(100% - 2em);
+      margin-inline: 1rem;
     }
   }
+
+  @media (min-width: 1024px) { // Adjust this to match the breakpoint for large screens in your project
+    app-home-page-card:nth-child(4n+3), app-home-page-card:nth-child(4n+2), app-home-page-card:nth-child(4n+1){
+      margin-right: 2rem;
+    }
+  }
+  

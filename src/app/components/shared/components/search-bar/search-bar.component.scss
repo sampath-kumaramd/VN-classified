@@ -1,16 +1,85 @@
 mat-card {
-    // width: 92vw;
-    justify-content: center;
-    margin-inline: auto;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    display: flex;
-    flex-direction: column;
+  // width: 92vw;
+  justify-content: center;
+  margin-inline: auto;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mobile styles (default) */
 mat-card {
-    width: 90%;
+  width: full;
+}
+
+@media (min-width: 1024px) {
+  // Adjust this to match the breakpoint for large screens in your project
+  mat-card {
+    margin-bottom: 1vh;
+    margin-top: 2vh;
   }
-  
- 
+}
+
+@media (max-width: 2140px) {
+  .search-box {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 2040px) {
+  .search-box {
+    width: 35vw;
+  }
+}
+
+@media (max-width: 1840px) {
+  .search-box {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 1740px) {
+  .search-box {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 1640px) {
+  .search-box {
+    width: 20vw;
+  }
+}
+
+@media (max-width: 1540px) {
+  .search-box {
+    width: 15vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  .search-box {
+    width: 10vw;
+  }
+}
+
+@media (max-width: 1340px) {
+  .search-box {
+    width: 5vw;
+  }
+}
+
+@media (max-width: 1240px) {
+  .search-box {
+    width: 20vw;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .search-box {
+    width: 90vw;
+  }
+}
+
+

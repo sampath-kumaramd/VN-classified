@@ -1,9 +1,9 @@
-<section class="bg-black  h-20  px-4 sm:px-16">
-  <div class="flex justify-between items-center">
+<section class="bg-black  h-20  px-4 sm:px-16 lg:px-56">
+  <div class="sm:flex justify-between ps-10 sm:ps-0 items-center">
     <a href="/home">
       <img src="assets/img/logo.png" alt="logo" />
     </a>
-    <div class="flex space-x-8 items-center mt-2 sm:mt-0">
+    <div class="flex ps-8 sm:ps-0 space-x-8 items-center mt-2 sm:mt-0">
       <ng-container *ngIf="getUserData(); else showLogin">
         <!-- Replace 'path_to_avatar.png' with the path to your avatar image -->
         <button (click)="navigateToEditUser()">
