@@ -71,12 +71,19 @@ mat-card {
 
 @media (max-width: 1240px) {
   .search-box {
-    width: 20vw;
+    width: 37vw;
+  }
+}
+
+@media (max-width: 810px) {
+  .search-box {
+    width: 43vw;
   }
 }
 
 
-@media (max-width: 640px) {
+
+@media (max-width: 766px) {
   .search-box {
     width: 90vw;
   }
